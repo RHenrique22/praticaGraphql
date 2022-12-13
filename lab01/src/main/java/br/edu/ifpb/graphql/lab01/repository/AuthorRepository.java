@@ -20,4 +20,8 @@ public class AuthorRepository {
         return this.authors.stream().filter( author -> author.getId() == id ).findFirst().orElse( null );
     }
 
+    public List<Author> findAll() {
+        return this.authors;
+    }
+
 }

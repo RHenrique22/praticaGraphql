@@ -1,5 +1,7 @@
 package br.edu.ifpb.graphql.lab01.service.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,13 @@ public class AuthorImp implements AuthorService {
     AuthorRepository authorRepository;
 
     @Override
-    public Author getById( int id ) {
+    public Author findById( int id ) {
         return this.authorRepository.getById( id );
+    }
+
+    @Override
+    public List<Author> findAll() {
+        return this.authorRepository.findAll();
     }
     
 }

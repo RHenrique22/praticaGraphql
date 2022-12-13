@@ -20,4 +20,8 @@ public class BookRepository {
         return this.books.stream().filter( book -> book.getId() == id ).findFirst().orElse( null );
     }
 
+    public List<Book> findAll() {
+        return this.books;
+    }
+
 }

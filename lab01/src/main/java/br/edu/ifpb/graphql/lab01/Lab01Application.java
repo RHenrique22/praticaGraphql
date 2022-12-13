@@ -29,9 +29,25 @@ public class Lab01Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Author a1 = new Author( 1, "Joanne", "Rowling" );
-		Author a2 = new Author( 2, "Herman", "Melville" );
-		Author a3 = new Author( 3, "Anne", "Rice" );
+		Author a1 = new Author( 
+			1, 
+			"Machado",
+			"de Assis"
+		);
+
+		Author a2 = new Author( 
+			2, 
+			"Euclides", 
+			"da Cunha"
+		);
+
+		Author a3 = new Author( 
+			3,
+			"Carlos Drummond", 
+			"de Andrade"
+		);
+
+
 
 		List<Author> authors = new ArrayList<>();
 
@@ -41,15 +57,29 @@ public class Lab01Application implements CommandLineRunner {
 
 		this.authorRepository.addAuthors( authors );
 
-		Book   b1 = new Book( 1, "Harry Potter and the Philosopher's Stone", 223, a1 );
-		Book   b2 = new Book( 2, "Moby Dick", 635, a2 );
-		Book   b3 = new Book( 3, "Interview with the vampire", 371, a3 );
+		Book   	b1 = new Book( 1, "Dom Casmurro", 210, a1 );
+		Book   	b2 = new Book( 2, "Memórias Póstumas de Brás Cubas", 320, a1 );
+		Book   	b3 = new Book( 3, "Quincas Borba", 270, a1 );
+
+		Book	b4 = new Book(4, "Os Sertões", 496 , a2);
+		Book	b5 = new Book(5, "Canudos (diario de uma expedição)", 184, a2);
+		Book	b6 = new Book(6, "Amazônia", 261 , a2);
+
+		Book	b7 = new Book(7, "Uma pedra no meio do caminho", 194, a3);
+		Book	b8 = new Book(8, "Vasto mundo", 168 , a3);
+		Book	b9 = new Book(9, "Brejo das almas", 80 , a3);
 
 		List<Book> books = new ArrayList<>();
 
 		books.add( b1 );
 		books.add( b2 );
 		books.add( b3 );
+		books.add( b4 );
+		books.add( b5 );
+		books.add( b6 );
+		books.add( b7 );
+		books.add( b8 );
+		books.add( b9 );
 
 		this.bookRepository.addBook( books );
 	}
