@@ -1,11 +1,11 @@
-package br.edu.ifpb.graphql.lab01.repository;
+package br.edu.ifpb.graphql.lab01.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import br.edu.ifpb.graphql.lab01.model.Author;
+import br.edu.ifpb.graphql.lab01.models.Author;
 
 @Repository
 public class AuthorRepository {
@@ -14,6 +14,10 @@ public class AuthorRepository {
 
     public void addAuthors( List<Author> authors ) {
         this.authors.addAll( authors );
+    }
+
+    public void addAuthor( Author author ) {
+        this.authors.add( author );
     }
 
     public Author getById( int id ) {

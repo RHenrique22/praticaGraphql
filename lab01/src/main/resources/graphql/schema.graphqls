@@ -2,6 +2,11 @@ type Query {
     bookById( id: ID ): Book
     getBooks:  [ Book ]
     getAuthors: [ Author ]
+    booksByAuthor( name: String ): [ Book ]
+}
+
+type Mutation {
+    createAuthor( id: ID, firstName: String, lastName: String ): Author
 }
 
 type Book {

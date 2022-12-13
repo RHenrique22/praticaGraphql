@@ -1,17 +1,18 @@
-package br.edu.ifpb.graphql.lab01.controller;
+package br.edu.ifpb.graphql.lab01.controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
-import br.edu.ifpb.graphql.lab01.model.Author;
-import br.edu.ifpb.graphql.lab01.model.Book;
-import br.edu.ifpb.graphql.lab01.service.AuthorService;
-import br.edu.ifpb.graphql.lab01.service.BookService;
+import br.edu.ifpb.graphql.lab01.models.Author;
+import br.edu.ifpb.graphql.lab01.models.Book;
+import br.edu.ifpb.graphql.lab01.services.AuthorService;
+import br.edu.ifpb.graphql.lab01.services.BookService;
 
 @Controller
 public class BookController {
@@ -40,6 +41,11 @@ public class BookController {
     @QueryMapping
     public List<Author> getAuthors() {
         return this.authorService.findAll();
+    }
+
+    @QueryMapping
+    public List<Book> booksByAuthor( @Argument String name ) {
+        return this.bookService.findByAuthor( name );
     }
 
 }

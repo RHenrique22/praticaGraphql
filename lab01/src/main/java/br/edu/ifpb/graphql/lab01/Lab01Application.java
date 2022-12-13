@@ -8,10 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.edu.ifpb.graphql.lab01.model.Author;
-import br.edu.ifpb.graphql.lab01.model.Book;
-import br.edu.ifpb.graphql.lab01.repository.AuthorRepository;
-import br.edu.ifpb.graphql.lab01.repository.BookRepository;
+import br.edu.ifpb.graphql.lab01.models.Author;
+import br.edu.ifpb.graphql.lab01.models.Book;
+import br.edu.ifpb.graphql.lab01.repositories.AuthorRepository;
+import br.edu.ifpb.graphql.lab01.repositories.BookRepository;
 
 @SpringBootApplication
 public class Lab01Application implements CommandLineRunner {
@@ -47,8 +47,6 @@ public class Lab01Application implements CommandLineRunner {
 			"de Andrade"
 		);
 
-
-
 		List<Author> authors = new ArrayList<>();
 
 		authors.add( a1 );
@@ -81,7 +79,7 @@ public class Lab01Application implements CommandLineRunner {
 		books.add( b8 );
 		books.add( b9 );
 
-		this.bookRepository.addBook( books );
+		this.bookRepository.addBooks( books );
 	}
 
 }

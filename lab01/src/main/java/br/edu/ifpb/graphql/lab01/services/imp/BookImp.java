@@ -1,13 +1,13 @@
-package br.edu.ifpb.graphql.lab01.service.imp;
+package br.edu.ifpb.graphql.lab01.services.imp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.ifpb.graphql.lab01.model.Book;
-import br.edu.ifpb.graphql.lab01.repository.BookRepository;
-import br.edu.ifpb.graphql.lab01.service.BookService;
+import br.edu.ifpb.graphql.lab01.models.Book;
+import br.edu.ifpb.graphql.lab01.repositories.BookRepository;
+import br.edu.ifpb.graphql.lab01.services.BookService;
 
 @Service
 public class BookImp implements BookService {
@@ -23,6 +23,11 @@ public class BookImp implements BookService {
     @Override
     public List<Book> findAll() {
         return bookRepository.findAll();
+    }
+
+    @Override
+    public List<Book> findByAuthor( String name ) {
+        return this.bookRepository.findByAuthor( name );
     }
     
 }

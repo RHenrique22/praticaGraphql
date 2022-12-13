@@ -1,4 +1,4 @@
-package br.edu.ifpb.graphql.lab01.model;
+package br.edu.ifpb.graphql.lab01.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

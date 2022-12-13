@@ -1,13 +1,13 @@
-package br.edu.ifpb.graphql.lab01.service.imp;
+package br.edu.ifpb.graphql.lab01.services.imp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.ifpb.graphql.lab01.model.Author;
-import br.edu.ifpb.graphql.lab01.repository.AuthorRepository;
-import br.edu.ifpb.graphql.lab01.service.AuthorService;
+import br.edu.ifpb.graphql.lab01.models.Author;
+import br.edu.ifpb.graphql.lab01.repositories.AuthorRepository;
+import br.edu.ifpb.graphql.lab01.services.AuthorService;
 
 @Service
 public class AuthorImp implements AuthorService {
