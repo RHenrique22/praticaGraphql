@@ -105,6 +105,12 @@ public class BookRepository {
         return this.books;
     }
 
+    public List<Book> findByAuthor( String name ) {
+        return this.books.stream().filter(
+            book -> book.getAuthor().getFirstName().contains( name ) || book.getAuthor().getLastName().contains( name )
+        ).toList();
+    }
+
 }
 ```
 ``` java
@@ -146,6 +152,7 @@ import br.edu.ifpb.graphql.lab01.models.Book;
 public interface BookService {
     Book findById( int id );
     List<Book> findAll();
+    List<Book> findByAuthor( String name );
 }
 ```
 ``` java
@@ -186,6 +193,11 @@ public class BookImp implements BookService {
     @Override
     public List<Book> findAll() {
         return bookRepository.findAll();
+    }
+
+    @Override
+    public List<Book> findByAuthor( String name ) {
+        return this.bookRepository.findByAuthor( name );
     }
     
 }
@@ -263,6 +275,11 @@ public class BookController {
     @QueryMapping
     public List<Author> getAuthors() {
         return this.authorService.findAll();
+    }
+
+    @QueryMapping
+    public List<Book> booksByAuthor( @Argument String name ) {
+        return this.bookService.findByAuthor( name );
     }
 
 }
